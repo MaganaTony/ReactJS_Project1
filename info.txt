@@ -1,0 +1,19 @@
+Lifecycle de React
+
+Mounting - Update - Unmounting 
+
+Mounting 
+- componentWillMount(Deprecado) = Metodo que llamaba React antes de lanzar website
+- Render= Se llama para renderizar el sitio web con cada cambio se llama para renderizar de nuevo
+- component did Mount - Se llama para que una vez se haya terminado el render poder interactuar con el DOM 
+
+Updating
+- shouldComponentUpdate - Si el componente se deberia de actualizar se llama React para hacerlo a traves de filtros
+- componentDidUpdate - Una vez se haya actualizado el componente nos muestra el resultado final
+
+Unmount
+
+- componentWillUnmount - Desmonta el componente y todas sus operaciones que dependen de el
+
+React Hooks
+- Funciones para enganchar  

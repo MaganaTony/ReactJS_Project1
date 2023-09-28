@@ -1,0 +1,27 @@
+.pokemon{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.pokemon h1 {
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pokemon span  {
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 5px 8px;
+}
+
+.hideID {
+    display: none;
+}
