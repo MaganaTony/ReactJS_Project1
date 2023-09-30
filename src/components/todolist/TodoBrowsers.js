@@ -1,34 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Todoitem from "./Todoitem";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../app/App";
 
-export default function TodoBrowser() {
-
-    const todosDb = [
-        {
-            id: 5,
-            name: "Todo 1",
-            description: "Description 1",
-            done: false
-            
-        },
-        {
-            id: 8,
-            name: "Todo 2",
-            description: "Description 2",
-            done: true
-            
-        },
-        {
-            id: 3,
-            name: "Todo 3",
-            description: "Description 3",
-            done: false
-            
-        }
-    ]
-    
-    const [todos, setTodos] = useState([])
+export default function TodoBrowser() {    
+    const { todos, setTodos } = useContext(AppContext);
     const navigate = useNavigate();
 
     function removeTodo (id) {
@@ -37,14 +13,11 @@ export default function TodoBrowser() {
         })
         setTodos(newTodos);
     }
-
+    
     function editTodo (id) {
+        // Redirect to edit page
         navigate(`/todolist/edit/${id}`)
     }
-
-    useEffect(() => {
-        setTodos(todosDb);
-    }, []);
 
     return (
         <div className="TodoBrowser container card">
