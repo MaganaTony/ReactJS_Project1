@@ -3,19 +3,19 @@ import * as actionTypes from '../actions/todoActions';
 const initialState = {
     todos: [
         {
-            id: 5,
+            id: 0,
             name: "Tarea numero 1",
             description: "Description de tarea numero 1",
             done: false
         },
         {
-            id: 8,
+            id: 1,
             name: "Esta es la tarea numero 2",
             description: "Description de tarea numero 2",
             done: true
         },
         {
-            id: 3,
+            id: 2,
             name: "Aun esta es la tarea numero 3",
             description: "Description de tarea numero 3",
             done: false
@@ -33,12 +33,12 @@ const todoReducer = (state = initialState, action) => {
         case actionTypes.REMOVE_TODO:
             return {
                 ...state,
-                todos: state.todos.filter((todo) => todo.id !== action.payload.id)
+                todos: state.todos.filter((todo) => todo.id !== Number(action.payload.id))
             };
         case actionTypes.EDIT_TODO:
             return {
                 ...state,
-                todos: state.todos.map((todo) => todo.id === action.payload.id ? action.payload : todo),
+                todos: state.todos.map((todo) => todo.id === Number(action.payload.id) ? action.payload : todo),
             };
         default:
             return state;

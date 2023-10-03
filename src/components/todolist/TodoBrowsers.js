@@ -1,17 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 import Todoitem from "./Todoitem";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../app/App";
+import { useDispatch, useSelector } from "react-redux";
+import CreateTodo from "./CreateTodo";
+import * as todoActions from "../../store/actions/todoActions";
 
 export default function TodoBrowser() {    
-    const { todos, setTodos } = useContext(AppContext);
+    const dispatch = useDispatch();
+    const todos = useSelector((state) => state.todoReducer.todos)
+
     const navigate = useNavigate();
 
     function removeTodo (id) {
-        const newTodos = todos.filter((todo) => {
-            return todo.id !== id;
+        dispatch({
+            type: todoActions.REMOVE_TODO,
+            payload: {
+                id
+            }
         })
-        setTodos(newTodos);
     }
     
     function editTodo (id) {
@@ -23,6 +29,7 @@ export default function TodoBrowser() {
         <div className="TodoBrowser container card">
             <div className="text-center pt-3">
                 <h1>Todo listo app</h1>
+                <CreateTodo/>
             </div>    
             {
                 todos.map((todo, index) => {
