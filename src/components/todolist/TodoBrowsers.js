@@ -12,12 +12,7 @@ export default function TodoBrowser() {
     const navigate = useNavigate();
 
     function removeTodo (id) {
-        dispatch({
-            type: todoActions.REMOVE_TODO,
-            payload: {
-                id
-            }
-        })
+        dispatch(todoActions.removeTodoAction(id));
     }
     
     function editTodo (id) {
