@@ -6,6 +6,8 @@ export const ACTIVE_TODO = "ACTIVE_TODO";
 export const removeTodoAction = (id) => dispatch => {
     dispatch({
         type: REMOVE_TODO,
-        payload: id
+        payload: {
+            id
+        }
     })
 };

@@ -7,7 +7,7 @@ export default function Navbar() {
                 <a className="navbar-brand" href="/">Todo listo app</a>
                 <ul className="nav">
                     <li className="nav-item">
-                        <a className="nav-link" href="/todolist">TL Home</a>
+                        <a className="nav-link" href="/">TL Home</a>
                     </li>
                 </ul>
             </div>
